@@ -77,7 +77,9 @@ def alt_buffer_km():
 # does not move when the data files do.
 PRE_REFACTOR = {
     "phi_per_OD": 8e-4,                   # now 3.6e-3, Volkmer & Heinemann 2011
-    "gfp_maturation_halflife_s": 360.0,   # now 816 s, Balleza et al. 2017
+    "gfp_maturation_halflife_s": 360.0,   # now 2166 s, wild-type GFP
+    "v_healthy": 150.0,                   # now 100, Hiramatsu et al. 2014, male
+    "v_cutoff": 250.0,                    # now 210, Nakayama et al. 2012, male
 }
 
 

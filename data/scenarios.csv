@@ -10,13 +10,13 @@ das_reference,creatinine,1.0,g/L,Assumed urine creatinine. Needed to turn creati
 das_reference,conc_factor,15.0,fold,Sample concentration before the assay.
 das_reference,sample_frac,0.10,v/v,Fraction of the final assay volume that is concentrated sample.
 das_reference,interferent,0.0,uM,Cross-reactive polyamines in the raw biofluid.
-das_reference,selectivity,100.0,dimensionless,"(kcat/Km) analyte over (kcat/Km) interferent. Assumption: not measured for any enzyme in sensors.csv."
+das_reference,selectivity,100.0,dimensionless,(kcat/Km) analyte over (kcat/Km) interferent. Assumption: not measured for any enzyme in sensors.csv.
 das_reference,OD,0.10,OD600,Cell density in the assay.
 das_reference,E,1.0e-3,uM,Enzyme concentration in its own compartment.
 das_reference,alpha,1.0,dimensionless,Analyte accumulation ratio cytoplasm over medium.
 das_reference,T_read,3600.0,s,Time from sample addition to the fluorescence read.
-das_reference,v_healthy,150.0,nmol/g creatinine,Healthy level used by the legacy discriminate() call.
-das_reference,v_cutoff,250.0,nmol/g creatinine,Published cut-off used by the legacy discriminate() call.
+das_reference,v_healthy,100.0,nmol/g creatinine,"Healthy median, male: Hiramatsu et al., Ann Clin Biochem 2014;51(4):459-467, n~5734. The female median is 149, and the page quotes one sex at a time, so the pair has to be consistent: 100/210 for males or 149/250 for females, never 150/250."
+das_reference,v_cutoff,210.0,nmol/g creatinine,"Colorectal cut-off, male: Nakayama et al., Oncology Letters 2012;3(5):970-974, doi 10.3892/ol.2012.625, n=113, defined as the healthy mean + 2 SD. The female cut-off in the same work is 250."
 screen_default,mode,free,,Cell-free enzyme for the screening runs.
 screen_default,creatinine,1.0,g/L,Assumed urine creatinine for unit conversion.
 screen_default,conc_factor,1.0,fold,"Starts at 1 so the screen reports the concentration factor a candidate needs, rather than assuming one."
@@ -26,7 +26,7 @@ screen_default,selectivity,100.0,dimensionless,Assumption; see the das_reference
 screen_default,OD,0.05,OD600,Low cell density to keep the endogenous H2O2 background small.
 screen_default,E,1.5e-3,uM,Enzyme concentration in its own compartment.
 screen_default,alpha,1.0,dimensionless,Analyte accumulation ratio cytoplasm over medium.
-screen_default,T_read,1800.0,s,30-minute read.
+screen_default,T_read,3600.0,s,"60-minute read. The wild-type reporter in the construct matures in 36 min, so a 30-minute read samples the fold before it has formed."
 screen_default,P_endo,4.0,uM/s,Non-growing carbon-limited cells produce less endogenous H2O2 than the platform default of 14.
 screen_default,mu,1e-6,1/s,Non-growing cells; overrides the doubling time in platform.csv.
 web_default,mode,free,,Enzyme localisation for the interactive page's starting state.
@@ -45,8 +45,8 @@ web_default,alpha,1.0,dimensionless,Analyte accumulation ratio cytoplasm over me
 web_default,T_read,1800.0,s,Starting read time.
 web_default,P_endo,4.0,uM/s,Non-growing cells; overrides the platform default of 14.
 web_default,growing,0,boolean,Growth-dilution switch off at start.
-web_default,v_healthy,150.0,nmol/g creatinine,Healthy level the page's fold readout is quoted against.
-web_default,v_cutoff,250.0,nmol/g creatinine,Cut-off level the page's fold readout is quoted against.
-web_default,cutoff_note,cutoff 200 (M) / 250 (F),,"Sex-split cut-off text shown under the sample slider, carried verbatim from the original page. clinical.csv records only the single 0.25 umol/g cut-off of 10.1158/1078-0432.CCR-04-2275, so this split is not derived from the data files and is kept as published text."
+web_default,v_healthy,100.0,nmol/g creatinine,"Healthy median, male: Hiramatsu et al., Ann Clin Biochem 2014;51(4):459-467, n~5734. The female median is 149, and the page quotes one sex at a time, so the pair has to be consistent: 100/210 for males or 149/250 for females, never 150/250."
+web_default,v_cutoff,210.0,nmol/g creatinine,"Colorectal cut-off, male: Nakayama et al., Oncology Letters 2012;3(5):970-974, doi 10.3892/ol.2012.625, n=113, defined as the healthy mean + 2 SD. The female cut-off in the same work is 250."
+web_default,cutoff_note,cutoff 210 (M) / 250 (F),,"Sex-split colorectal cut-offs from Nakayama et al. 2012 (doi 10.3892/ol.2012.625), healthy mean + 2 SD, n=113. Previously 200/250, which comes from Takahashi et al., Br J Cancer 2015 on non-small-cell lung cancer, where the authors call those values tentatively fixed from health-check data rather than mean + 2 SD. For colorectal cancer Nakayama is the primary source."
 web_default,cr_low,0.5,g/L,Low end of the urine creatinine range the page uses for its hydration-inversion check.
 web_default,cr_high,2.0,g/L,High end of that range. Together these show that hydration can invert the two classes.
