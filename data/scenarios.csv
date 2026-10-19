@@ -42,7 +42,7 @@ web_default,cr_norm,0,boolean,Creatinine normalisation switch off at start.
 web_default,OD,0.05,OD600,Starting cell density.
 web_default,E,1.5e-3,uM,Starting enzyme concentration.
 web_default,alpha,1.0,dimensionless,Analyte accumulation ratio cytoplasm over medium.
-web_default,T_read,1800.0,s,Starting read time.
+web_default,T_read,3600.0,s,"Starting read time. An hour, matching the screen and the reference scenario: the wild-type reporter in the construct matures in 36 min, so a 30-minute read opens the page before the fold has formed. The slider still moves."
 web_default,P_endo,4.0,uM/s,Non-growing cells; overrides the platform default of 14.
 web_default,growing,0,boolean,Growth-dilution switch off at start.
 web_default,v_healthy,100.0,nmol/g creatinine,"Healthy median, male: Hiramatsu et al., Ann Clin Biochem 2014;51(4):459-467, n~5734. The female median is 149, and the page quotes one sex at a time, so the pair has to be consistent: 100/210 for males or 149/250 for females, never 150/250."
