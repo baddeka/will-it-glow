@@ -1,6 +1,6 @@
 order,label,default,OD,k_scav,conc_factor,sample_frac,E,mode,T_read,P_endo,growing,interferent,selectivity,cr_norm,k_chem,alpha,note
-1,Original draft,,1.0,700,15,0.10,1e-2,free,3600,14,1,0,,0,0,1,"The design as first written: conventional cell density and a growing culture."
+1,Original draft,,1.0,700,15,0.10,1e-2,free,3600,14,1,0,,0,0,1,The design as first written: conventional cell density and a growing culture.
 2,Hpx- knockout,,1.0,5,15,0.10,1e-2,free,3600,14,1,0,,0,0,1,"Catalase/peroxidase triple knockout. Raises resting cytoplasmic H2O2 above the OxyR half-activation point, so the reporter starts switched on and the fold gets worse."
-3,Recommended,1,0.05,700,12,0.50,1.5e-3,free,1800,4,0,0,,1,0,1,"Low cell density, non-growing cells, a 30-minute read, creatinine normalised."
-4,Periplasmic display,,0.05,700,12,0.50,100,peri,1800,4,0,0,,1,0,1,"Enzyme displayed in the periplasm; the effective loading per litre of assay is capped by periplasmic volume."
-5,Real urine,,0.05,700,12,0.50,1.5e-3,free,1800,4,0,2,100,0,0.005,1,"Adds 2 uM of cross-reactive polyamines and a matrix peroxide sink. The selectivity of 100 is an assumption: none has been measured for this enzyme."
+3,Recommended,1,0.05,700,12,0.50,1.5e-3,free,3600,4,0,0,,1,0,1,"Low cell density, non-growing cells, a 60-minute read, creatinine normalised."
+4,Periplasmic display,,0.05,700,12,0.50,100,peri,3600,4,0,0,,1,0,1,Enzyme displayed in the periplasm; the effective loading per litre of assay is capped by periplasmic volume.
+5,Real urine,,0.05,700,12,0.50,1.5e-3,free,3600,4,0,2,100,0,0.005,1,Adds 2 uM of cross-reactive polyamines and a matrix peroxide sink. The selectivity of 100 is an assumption: none has been measured for this enzyme.
